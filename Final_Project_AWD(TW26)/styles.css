@@ -1,0 +1,250 @@
+/* Apply the font to the entire body */
+body {
+    font-family: 'Fredoka One', sans-serif; /* Use Fredoka One for a comical, playful look */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    margin: 0;
+    padding: 0;
+}
+
+/* Optional: Add a slight overlay for better text readability */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2); /* Semi-transparent black overlay */
+    z-index: 0; /* Places the overlay above the video but below the content */
+}
+
+/* Optional: Customize specific elements */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Fredoka One', sans-serif; /* Apply the font to headings */
+}
+
+.nav-link, .btn {
+    font-family: 'Fredoka One', sans-serif; /* Apply the font to navigation links and buttons */
+}
+
+main {
+    flex: 1; /* Pushes the footer to the bottom */
+    position: relative;
+    z-index: 1; /* Ensures main content is above the video */
+}
+
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 20px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #333;
+    position: relative;
+    z-index: 1; /* Ensures footer is above the video */
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 100px; /* Increased padding for more centering */
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between the logo image and text */
+}
+
+.logo img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.nav-buttons {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Add spacing between navigation buttons */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-buttons li {
+    position: relative;
+}
+
+/* General styles for header buttons */
+.nav-buttons li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-buttons li a:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    list-style: none;
+    padding: 5px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+    padding: 5px 15px;
+}
+
+.dropdown-menu li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* General styles for navigation links */
+.nav-link, .dropdown-item {
+    color: #006666; /* Darker cyan color */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .dropdown-item:hover {
+    color: #004c4c; /* Even darker cyan on hover */
+}
+
+/* Gradient for Sign Up button */
+.sign-up-button {
+    background: linear-gradient(to bottom, #a29bfe, #81ecec);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: none;
+    text-align: center;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+}
+
+.sign-up-button:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Gradient for Sign Up button */
+.btn-gradient {
+    background: linear-gradient(to bottom, #a29bfe, #81ecec);
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    padding: 10px 25px;
+    transition: transform 0.2s ease, opacity 0.3s ease, color 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+    color: #006666; /* Darker cyan color on hover */
+}
+
+/* Arrow next to Profile */
+.arrow {
+    font-size: 14px;
+    margin-left: 5px;
+    color: #333;
+}
+
+.nav {
+    gap: 20px; /* Adds spacing between navigation items */
+}
+
+.nav-item {
+    margin-left: 15px; /* Adds spacing between buttons */
+}
+
+/* Header background color */
+header {
+    background-color: #f1f1f1; /* Light gray color */
+    border-bottom: 1px solid #ddd; /* Subtle border for separation */
+    position: relative;
+    z-index: 1; /* Ensures header is above the video */
+}
+
+/* Optional: Adjust text color for better contrast */
+header .nav-link, header .btn-gradient {
+    color: #333; /* Darker text for better readability */
+}
+
+header .nav-link:hover, header .btn-gradient:hover {
+    color: #006666; /* Dark cyan on hover */
+}
+
+/* Center the modal title */
+.modal-title {
+    font-family: 'Fredoka One', sans-serif;
+    text-align: center;
+}
+
+/* Add spacing to icons in labels */
+.form-label i {
+    margin-right: 8px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Center the video and make the frame rounded */
+.rounded-video {
+    border-radius: 15px; /* Makes the frame rounded */
+    overflow: hidden; /* Ensures the content stays within the rounded frame */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Adds a subtle shadow for better aesthetics */
+}
+
+/* Video Background */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire background */
+    z-index: -1; /* Places the video behind all other content */
+    pointer-events: none; /* Prevents the video from blocking interactions */
+    opacity: 0.7; /* Adjusts the opacity of the video */
+}
