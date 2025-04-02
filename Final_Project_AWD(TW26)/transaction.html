@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background video styling */
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.7;
+        }
+
+        /* Content container styling */
+        body {
+            font-family: 'Fredoka One', sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="./assets/images/videos/pikachu_background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header -->
+    <header class="bg-light border-bottom">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo d-flex align-items-center">
+                <img src="./assets/images/poke_gods_logo.png" alt="Group Logo" class="rounded-circle me-2" style="height: 50px; width: 50px;">
+                <h1 class="h4 mb-0">Transaction History</h1>
+            </div>
+            <div class="user-info text-end">
+                <p class="mb-0 fw-bold">Username: <span id="username">JohnDoe</span></p>
+                <hr class="mt-1 mb-0" style="border: 1px solid #ccc;">
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <h2 class="text-center mb-4">Your Transaction History</h2>
+        <div class="transaction-history">
+            <!-- Transaction Item 1 -->
+            <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+                <div class="d-flex align-items-center">
+                    <img src="./assets/images/ingame/1.webp" alt="Ultra Box" class="img-fluid me-3" style="height: 50px; width: 50px;">
+                    <div>
+                        <p class="mb-0 fw-bold">Ultra Box</p>
+                        <p class="mb-0 text-muted">Quantity: 2</p>
+                    </div>
+                </div>
+                <p class="mb-0">&#8369; 998.00</p>
+            </div>
+            <!-- Transaction Item 2 -->
+            <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+                <div class="d-flex align-items-center">
+                    <img src="./assets/images/ingame/coins3.webp" alt="2500 PokeCoins" class="img-fluid me-3" style="height: 50px; width: 50px;">
+                    <div>
+                        <p class="mb-0 fw-bold">2500 PokeCoins</p>
+                        <p class="mb-0 text-muted">Quantity: 1</p>
+                    </div>
+                </div>
+                <p class="mb-0">&#8369; 289.00</p>
+            </div>
+            <!-- Transaction Item 3 -->
+            <div class="d-flex justify-content-between align-items-center border-bottom py-3">
+                <div class="d-flex align-items-center">
+                    <img src="./assets/images/ingame/4.webp" alt="Special Box" class="img-fluid me-3" style="height: 50px; width: 50px;">
+                    <div>
+                        <p class="mb-0 fw-bold">Special Box</p>
+                        <p class="mb-0 text-muted">Quantity: 3</p>
+                    </div>
+                </div>
+                <p class="mb-0">&#8369; 597.00</p>
+            </div>
+            <!-- Total Amount -->
+            <div class="d-flex justify-content-between align-items-center border-top pt-3 mt-3">
+                <p class="mb-0 fw-bold">Total Amount:</p>
+                <p class="mb-0 fw-bold">&#8369; 1884.00</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 border-top">
+        <p>&copy; 2025 Poke Gods Online Store. All rights reserved.</p>
+        <p>Images and content used are copyrighted by Niantic. This project is for educational purposes only and no copyright infringement is intended.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Placeholder for dynamically setting the username
+        document.getElementById('username').textContent = 'JohnDoe'; // Replace 'JohnDoe' with the logged-in username
+    </script>
+</body>
+</html>

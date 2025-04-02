@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poke Gods Online Store - Store</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <!-- Font Awesome CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Video Background -->
+    <video autoplay muted loop id="background-video">
+        <source src="./assets/images/videos/pokeball_background.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header -->
+    <header class="bg-light border-bottom">
+        <div class="container d-flex justify-content-between align-items-center py-3">
+            <div class="logo d-flex align-items-center">
+                <img src=".\assets\images\poke_gods_logo.png" alt="Group Logo" class="rounded-circle me-2" style="height: 50px; width: 50px;">
+                <h1 class="h4 mb-0">Online Store</h1>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a href="index.html" class="nav-link ms-3">Home</a></li>
+                    <li class="nav-item"><a href="store.html" class="nav-link ms-3 active-page">Store</a></li>
+                    <li class="nav-item dropdown">
+                        <a href="profile.html" class="nav-link dropdown-toggle ms-3" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="transaction-history.html" class="dropdown-item">Transaction History</a></li>
+                            <li><a href="cart.html" class="dropdown-item">Cart</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item" id="auth-button">
+                        <a href="#" class="btn btn-gradient ms-3" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</a>
+                    </li>
+                    <li class="nav-item d-none" id="user-icon">
+                        <a href="profile.html" class="nav-link ms-3">
+                            <i class="fa-solid fa-circle-user fa-lg"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <section class="intro text-center">
+            <h2>Welcome to the Store!</h2>
+            <p>Browse and purchase in-game items to enhance your Pokémon GO experience.</p>
+        </section>
+
+        <!-- Bootstrap Carousel -->
+        <section class="carousel-container my-5 position-relative">
+            <div id="storeCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Carousel Indicators -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#storeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#storeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#storeCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+
+                <div class="carousel-inner rounded-carousel">
+                    <!-- Carousel Item 1 -->
+                    <div class="carousel-item active">
+                        <div class="carousel-image" style="background-image: url('./assets/images/carousel/carousel1.jpg');">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <!-- Light Gray Background -->
+                                <div class="bg-light p-4 rounded shadow text-center" style="max-width: 80%; margin: 0 auto; transform: translateY(30px);">
+                                    <!-- Large Image -->
+                                    <img src="./assets/images/carousel/bundle1.webp" alt="Bundle 1" class="img-fluid mb-4" style="max-height: 150px;">
+                                    <!-- Smaller Images -->
+                                    <div class="d-flex justify-content-center">
+                                        <img src="./assets/images/carousel/item_event_ticket_071.webp" alt="Event Ticket" class="img-fluid me-3" style="max-height: 80px;">
+                                        <img src="./assets/images/carousel/item_event_ticket_071.webp" alt="Event Ticket" class="img-fluid me-3" style="max-height: 80px;">
+                                        <img src="./assets/images/carousel/virtual-currency1.webp" alt="Virtual Currency" class="img-fluid" style="max-height: 80px;">
+                                    </div>
+                                    <!-- Text Below Images -->
+                                    <p class="mt-3 text-dark fw-bold">Power Up Ticket Ultra Ticket Box</p>
+                                    <!-- Price Tag -->
+                                    <div class="price-tag">
+                                        &#8369; 289.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 2 -->
+                    <div class="carousel-item">
+                        <div class="carousel-image" style="background-image: url('./assets/images/carousel/carousel2.jpg');">
+                            <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                                <!-- Light Gray Background -->
+                                <div class="bg-light p-4 rounded shadow text-center" style="max-width: 80%; margin: 0 auto; transform: translateY(30px);">
+                                    <!-- Large Image -->
+                                    <img src="./assets/images/carousel/bundle2.webp" alt="Bundle 2" class="img-fluid mb-4" style="max-height: 150px;">
+                                    <!-- Smaller Images -->
+                                    <div class="d-flex justify-content-center">
+                                        <img src="./assets/images/carousel/item_rare_candy2.webp" alt="Rare Candy" class="img-fluid me-3" style="max-height: 80px;">
+                                        <img src="./assets/images/carousel/item_event_ticket_102.webp" alt="Event Ticket" class="img-fluid me-3" style="max-height: 80px;">
+                                        <img src="./assets/images/carousel/item_max_revive2.webp" alt="Max Revive" class="img-fluid me-3" style="max-height: 80px;">
+                                        <img src="./assets/images/carousel/item_paid_raid_ticket2.webp" alt="Paid Raid Ticket" class="img-fluid" style="max-height: 80px;">
+                                    </div>
+                                    <!-- Text Below Images -->
+                                    <p class="mt-3 text-dark fw-bold">Rare Candy Bundle with Event Tickets</p>
+                                    <!-- Price Tag -->
+                                    <div class="price-tag">
+                                        &#8369; 439.00
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Item 3 -->
+                    <div class="carousel-item">
+                        <div class="carousel-image" style="background-image: url('./assets/images/carousel/carousel3.jpg');">
+                            <div class="carousel-caption d-none d-md-block">
+                                <!-- Removed Text -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Multi-Container Spaces -->
+        <section class="multi-container my-5">
+           <!-- Item Boxes Section -->
+<div class="category-section mb-5">
+    <h3 class="text-center mb-4">Item Boxes</h3>
+    <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/1.webp" alt="Ultra Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Ultra Box</p>
+                <div class="price-tag">&#8369; 499.00</div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/2.webp" alt="Adventure Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Adventure Box</p>
+                <div class="price-tag">&#8369; 399.00</div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/3.webp" alt="Great Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Great Box</p>
+                <div class="price-tag">&#8369; 299.00</div>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/4.webp" alt="Special Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Special Box</p>
+                <div class="price-tag">&#8369; 199.00</div>
+            </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/5.webp" alt="Premium Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Premium Box</p>
+                <div class="price-tag">&#8369; 599.00</div>
+            </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/6.webp" alt="Elite Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Elite Box</p>
+                <div class="price-tag">&#8369; 699.00</div>
+            </div>
+        </div>
+        <!-- Item 7 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/7.webp" alt="Trainer Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Trainer Box</p>
+                <div class="price-tag">&#8369; 349.00</div>
+            </div>
+        </div>
+        <!-- Item 8 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/8.webp" alt="Battle Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Battle Box</p>
+                <div class="price-tag">&#8369; 449.00</div>
+            </div>
+        </div>
+        <!-- Item 9 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/9.webp" alt="Explorer Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Explorer Box</p>
+                <div class="price-tag">&#8369; 399.00</div>
+            </div>
+        </div>
+        <!-- Item 10 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/10.webp" alt="Collector Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Collector Box</p>
+                <div class="price-tag">&#8369; 549.00</div>
+            </div>
+        </div>
+        <!-- Item 11 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/11.webp" alt="Legendary Box" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">Legendary Box</p>
+                <div class="price-tag">&#8369; 799.00</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+           <!-- PokeCoins Section -->
+<div class="category-section">
+    <h3 class="text-center mb-4">PokeCoins</h3>
+    <div class="row g-4">
+        <!-- Item 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/coins1.webp" alt="PokeCoin 1" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">14500 PokeCoins</p>
+                <div class="price-tag">&#8369; 29.00</div>
+            </div>
+        </div>
+        <!-- Item 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/coins2.webp" alt="PokeCoin 2" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">5200 PokeCoins</p>
+                <div class="price-tag">&#8369; 149.00</div>
+            </div>
+        </div>
+        <!-- Item 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/coins3.webp" alt="PokeCoin 3" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">2500 PokeCoins</p>
+                <div class="price-tag">&#8369; 289.00</div>
+            </div>
+        </div>
+        <!-- Item 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/coins4.webp" alt="PokeCoin 4" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">1200 PokeCoins</p>
+                <div class="price-tag">&#8369; 589.00</div>
+            </div>
+        </div>
+        <!-- Item 5 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/coins5.webp" alt="PokeCoin 5" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">550 PokeCoins</p>
+                <div class="price-tag">&#8369; 1,170.00</div>
+            </div>
+        </div>
+        <!-- Item 6 -->
+        <div class="col-6 col-md-4 col-lg-3">
+            <div class="item-container bg-light rounded shadow text-center p-3">
+                <img src="./assets/images/ingame/coins6.webp" alt="PokeCoin 6" class="img-fluid mb-3" style="max-height: 150px;">
+                <p class="fw-bold mb-2">100 PokeCoins</p>
+                <div class="price-tag">&#8369; 2,950.00</div>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 border-top">
+        <p>&copy; 2025 Poke Gods Online Store. All rights reserved.</p>
+        <p>Images and content used are copyrighted by Niantic. This project is for educational purposes only and no copyright infringement is intended.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
