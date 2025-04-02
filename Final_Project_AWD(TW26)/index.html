@@ -30,17 +30,15 @@
                     <li class="nav-item"><a href="index.html" class="nav-link ms-3 active-page">Home</a></li>
                     <li class="nav-item"><a href="store.html" class="nav-link ms-3">Store</a></li>
                     <li class="nav-item dropdown">
-                        <a href="profile.html" class="nav-link dropdown-toggle ms-3" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
+                        <a href="#" class="nav-link dropdown-toggle ms-3" data-bs-toggle="dropdown" aria-expanded="false">Profile</a>
                         <ul class="dropdown-menu">
-                            <li><a href="transaction.html" class="dropdown-item">Transaction History</a></li>
-                            <li><a href="cart.html" class="dropdown-item">Cart</a></li>
+                            <li><a href="transaction.html" class="dropdown-item" id="transaction-history-link">Transaction History</a></li>
+                            <li><a href="cart.html" class="dropdown-item" id="cart-link">Cart</a></li>
                         </ul>
                     </li>
-                    <!-- Sign Up Button -->
                     <li class="nav-item" id="auth-button">
                         <a href="#" class="btn btn-gradient ms-3" data-bs-toggle="modal" data-bs-target="#signUpModal">Sign Up</a>
                     </li>
-                    <!-- User Icon (hidden by default) -->
                     <li class="nav-item d-none" id="user-icon">
                         <a href="profile.html" class="nav-link ms-3">
                             <i class="fa-solid fa-circle-user fa-lg"></i>
@@ -117,7 +115,7 @@
                         <!-- IGN -->
                         <div class="mb-3">
                             <label for="ign" class="form-label">
-                                <i class="fa-duotone fa-light fa-circle-user"></i> In-Game Name (IGN)
+                                <i class="fa-solid fa-user"></i> In-Game Name (IGN)
                             </label>
                             <input type="text" class="form-control" id="ign" placeholder="Enter your IGN" required>
                         </div>
@@ -149,6 +147,24 @@
         </div>
     </div>
 
+    <!-- Login Required Modal -->
+    <div class="modal fade" id="loginRequiredModal" tabindex="-1" aria-labelledby="loginRequiredModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginRequiredModalLabel">Login Required</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    You must be logged in to view the cart or transaction history.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-light text-center py-3 border-top">
         <p>&copy; 2025 Poke Gods. All rights reserved.</p>
         <p>Images and content used are copyrighted by Niantic. This project is for educational purposes only and no copyright infringement is intended.</p>
@@ -157,5 +173,29 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Example: Trigger the login required modal if the user is not logged in
+        const isLoggedIn = false; // Change this to true if the user is logged in
+
+        document.getElementById('transaction-history-link').addEventListener('click', function (e) {
+            if (!isLoggedIn) {
+                e.preventDefault();
+                const loginRequiredModal = new bootstrap.Modal(document.getElementById('loginRequiredModal'));
+                loginRequiredModal.show();
+            } else {
+                window.location.href = 'transaction.html';
+            }
+        });
+
+        document.getElementById('cart-link').addEventListener('click', function (e) {
+            if (!isLoggedIn) {
+                e.preventDefault();
+                const loginRequiredModal = new bootstrap.Modal(document.getElementById('loginRequiredModal'));
+                loginRequiredModal.show();
+            } else {
+                window.location.href = 'cart.html';
+            }
+        });
+    </script>
 </body>
 </html>
